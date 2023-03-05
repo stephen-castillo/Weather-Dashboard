@@ -102,3 +102,6 @@ dist
 
 # TernJS port file
 .tern-port
+
+# Assignment readme
+.assets/README.md
