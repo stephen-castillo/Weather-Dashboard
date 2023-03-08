@@ -14,206 +14,100 @@
         <link rel="stylesheet" href="">
         <style>
             header{
-                background-color: green;
+                background: rgb(2,0,36);
+                background: linear-gradient(90deg, 
+                rgba(0,212,255,1) 0%,
+                rgba(9,9,121,1) 35%,
+                rgba(2,0,36,1) 100%);
+                color: azure;
+                text-align: center;
+                
             }
-            #day2{
-                background-color: blue;
+            #day0{
+                border: solid 2px black;
             }
-            #day3{
-                background-color: red;
+            .smdiv{
+                /* background-color: #323d4f; */
+                background-color: steelblue;
+                color: white;
+                margin-left: 5px;
+                margin-right: 5px;
             }
+            #forcast{
+                display: none;
+            }
+            /* grey boxes #323d4f
+               grey button #aeaeae
+               search button #6991e3
+            */
         </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
+        
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="row">
                         <div class="col-md-12">
                             <header>
-                                <h3>
-                                   Weather Dashboard
-                                </h3>
+                                <h1>
+                                   <b>Weather Dashboard</b>
+                                </h1>
                             </header>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-3">
-                            <aside>
+                        
+                        <aside class="col-md-3 ">
+                            <h2>Search for a City</h2>
+                            <p><input type="search" name="city" class="form-control" id="city"></p>
+                            
+                            <div class="btn-group" style="width: 100%;">
+                                <button class="btn btn-block btn-primary " id="search" onclick="searchCity(event)">Search</button></div>
+                            <hr>
+                        
+                            <div class="btn-group-vertical" style="width: 100%;" id="savedCities">
                                 
-                                <input type="search" name="city" id="city">
-                                <button class="btn btn-primary" id="search" onclick="searchCity(event)">Search</button>
-                                
-                                
-                            </aside>
-                        </div>
-                        <div class="col-md-9">
+                            </div>
+                            <div class="btn-group-vertical" style="width: 100%;">
+                                <button class="btn btn-danger btn-block" id="delete" onclick="deleteLocal(event)">Clear Saved Cities</button>
+                            </div>
+                            
+                        </aside>
+                        
+                        <main class="col-md-9">
                             <div class="row">
-                                <div class="col-md-12">
-                                    <blockquote class="blockquote">
-                                        <p class="mb-0">
-                                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
-                                        </p>
-                                        <footer class="blockquote-footer">
-                                            Someone famous in <cite>Source Title</cite>
-                                        </footer>
-                                    </blockquote>
+                                <div class="col-md-10" id="day0">
+                        
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <h4>5-Day Forecast:</h4>
+                                    <h4 id="forcast">5-Day Forecast:</h4>
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-md-2">
-                                    <ul class="list-unstyled">
-                                        <li class="list-item">
-                                            Lorem ipsum dolor sit amet
-                                        </li>
-                                        <li class="list-item">
-                                            Consectetur adipiscing elit
-                                        </li>
-                                        <li class="list-item">
-                                            Integer molestie lorem at massa
-                                        </li>
-                                        <li class="list-item">
-                                            Facilisis in pretium nisl aliquet
-                                        </li>
-                                        <li class="list-item">
-                                            Nulla volutpat aliquam velit
-                                        </li>
-                                        <li class="list-item">
-                                            Faucibus porta lacus fringilla vel
-                                        </li>
-                                        <li class="list-item">
-                                            Aenean sit amet erat nunc
-                                        </li>
-                                        <li class="list-item">
-                                            Eget porttitor lorem
-                                        </li>
-                                    </ul>
+                                <div class="col-md-2 smdiv" id="day1">
+                        
                                 </div>
-                                <div class="col-md-2">
-                                    <ul class="list-unstyled">
-                                        <li class="list-item">
-                                            Lorem ipsum dolor sit amet
-                                        </li>
-                                        <li class="list-item">
-                                            Consectetur adipiscing elit
-                                        </li>
-                                        <li class="list-item">
-                                            Integer molestie lorem at massa
-                                        </li>
-                                        <li class="list-item">
-                                            Facilisis in pretium nisl aliquet
-                                        </li>
-                                        <li class="list-item">
-                                            Nulla volutpat aliquam velit
-                                        </li>
-                                        <li class="list-item">
-                                            Faucibus porta lacus fringilla vel
-                                        </li>
-                                        <li class="list-item">
-                                            Aenean sit amet erat nunc
-                                        </li>
-                                        <li class="list-item">
-                                            Eget porttitor lorem
-                                        </li>
-                                    </ul>
+                                <div class="col-md-2 smdiv" id="day2">
+                        
                                 </div>
-                                <div class="col-md-2">
-                                    <ul class="list-unstyled">
-                                        <li class="list-item">
-                                            Lorem ipsum dolor sit amet
-                                        </li>
-                                        <li class="list-item">
-                                            Consectetur adipiscing elit
-                                        </li>
-                                        <li class="list-item">
-                                            Integer molestie lorem at massa
-                                        </li>
-                                        <li class="list-item">
-                                            Facilisis in pretium nisl aliquet
-                                        </li>
-                                        <li class="list-item">
-                                            Nulla volutpat aliquam velit
-                                        </li>
-                                        <li class="list-item">
-                                            Faucibus porta lacus fringilla vel
-                                        </li>
-                                        <li class="list-item">
-                                            Aenean sit amet erat nunc
-                                        </li>
-                                        <li class="list-item">
-                                            Eget porttitor lorem
-                                        </li>
-                                    </ul>
+                                <div class="col-md-2 smdiv" id="day3">
+                        
                                 </div>
-                                <div class="col-md-2">
-                                    <ul class="list-unstyled">
-                                        <li class="list-item">
-                                            Lorem ipsum dolor sit amet
-                                        </li>
-                                        <li class="list-item">
-                                            Consectetur adipiscing elit
-                                        </li>
-                                        <li class="list-item">
-                                            Integer molestie lorem at massa
-                                        </li>
-                                        <li class="list-item">
-                                            Facilisis in pretium nisl aliquet
-                                        </li>
-                                        <li class="list-item">
-                                            Nulla volutpat aliquam velit
-                                        </li>
-                                        <li class="list-item">
-                                            Faucibus porta lacus fringilla vel
-                                        </li>
-                                        <li class="list-item">
-                                            Aenean sit amet erat nunc
-                                        </li>
-                                        <li class="list-item">
-                                            Eget porttitor lorem
-                                        </li>
-                                    </ul>
+                                <div class="col-md-2 smdiv" id="day4">
+                        
                                 </div>
-                                <div class="col-md-2">
-                                    <ul class="list-unstyled">
-                                        <li class="list-item">
-                                            Lorem ipsum dolor sit amet
-                                        </li>
-                                        <li class="list-item">
-                                            Consectetur adipiscing elit
-                                        </li>
-                                        <li class="list-item">
-                                            Integer molestie lorem at massa
-                                        </li>
-                                        <li class="list-item">
-                                            Facilisis in pretium nisl aliquet
-                                        </li>
-                                        <li class="list-item">
-                                            Nulla volutpat aliquam velit
-                                        </li>
-                                        <li class="list-item">
-                                            Faucibus porta lacus fringilla vel
-                                        </li>
-                                        <li class="list-item">
-                                            Aenean sit amet erat nunc
-                                        </li>
-                                        <li class="list-item">
-                                            Eget porttitor lorem
-                                        </li>
-                                    </ul>
+                                <div class="col-md-2 smdiv" id="day5">
                                 </div>
                                 <div class="col-md-2">
                                 </div>
                             </div>
-                        </div>
+                        </main>
                     </div>
                 </div>
             </div>
