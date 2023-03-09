@@ -6,7 +6,8 @@ Buttons will be created for previously searched cities.
 Click on a previous cities will recall the stored data for the city.
 
 ## Screenshot
-![image](https://user-images.githubusercontent.com/122939431/223924707-e38cee99-ba3b-45a6-a4fa-5a1b9b1ce000.png)
+![image](https://user-images.githubusercontent.com/122939431/223926364-52b60dff-5c57-400f-aa6a-8e83ab9eb759.png)
+
 
 
 ## GitHub Pages Link:
